@@ -16,13 +16,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Load the model
+
 model = tf.keras.models.load_model('best_ultimate_model.keras')
 
-# Make sure this matches the order used during training
+
 emotions = ['angry', 'fear', 'happy', 'neutral', 'sad', 'surprise']
 
-# Load the pre-trained face detection model from OpenCV
+
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 def preprocess_face(face):
@@ -45,7 +45,7 @@ async def websocket_endpoint(websocket: WebSocket):
         faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
 
         if len(faces) > 0:
-            (x, y, w, h) = faces[0]  # Process only the first detected face
+            (x, y, w, h) = faces[0] 
             face = frame[y:y+h, x:x+w]
             preprocessed_face = preprocess_face(face)
             prediction = model.predict(np.expand_dims(preprocessed_face, axis=0))[0]
