@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes, Navigate, useNavigate } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
-import LandingPage from './components/LandingPage'
+import LandingPage from './components/LandingPage.jsx'
 import Login from './components/Login'
-import ProfilePage from './components/ProfilePage'
+import ProfilePage from './components/ProfilePage.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 
