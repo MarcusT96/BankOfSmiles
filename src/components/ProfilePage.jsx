@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 
-const ProfilePage = () => {
+const ProfilePage = ({ onLogout }) => {
   return (
     <Container className="text-center">
       <Row className="my-5">
@@ -25,6 +25,11 @@ const ProfilePage = () => {
           <Button variant="primary" className="m-2">Deposit Smiles</Button>
           <Button variant="secondary" className="m-2">Withdraw Grins</Button>
           <Button variant="info" className="m-2">Transfer Chuckles</Button>
+        </Col>
+      </Row>
+      <Row className="mb-4">
+        <Col>
+          <Button variant="danger" onClick={onLogout}>Log Out</Button>
         </Col>
       </Row>
       <Row>
